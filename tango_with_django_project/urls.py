@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^rango/', include('rango.urls')),
     url(r'rango/about/', include('rango.urls')),
+    url(r'rango/login/', incluse('rango.urls')),
 ]
 
 
