@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^rango/', include('rango.urls')),
     url(r'rango/about/', include('rango.urls')),
     url(r'rango/login/', include('rango.urls')),
-    url(r'https://floating-hamlet-8699.herokuapp.com/', views.todo, name='todo'),
+    url(r'https://floating-hamlet-8699.herokuapp.com/', include('rango.urls')),
 ]
 
 

@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     url(r'^login/$', views.user_login, name='login'),
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^todo/$', views.todo, name='todo'),
+    url(r'https://floating-hamlet-8699.herokuapp.com/', views.todo, name='todo'),
     )
