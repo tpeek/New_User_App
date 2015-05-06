@@ -100,10 +100,11 @@ WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': DATABASE_PATH,                      
-        'USER': 'db_user',
-        'PASSWORD': 'db_user_password',
-        'HOST': ''
+        'NAME': 'postgres',                      
+        'USER': 'postgres',
+        'PASSWORD': 'a',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
