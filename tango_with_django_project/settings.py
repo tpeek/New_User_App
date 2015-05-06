@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import dj_database_url
 
 
 SETTINGS_DIR = os.path.dirname(__file__)
@@ -25,8 +24,8 @@ LOGIN_URL = '/rango/login/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -107,7 +106,9 @@ DATABASES = {
         #'PORT': '5432',
     }
 }
+import dj_database_url
 
+DATABASES['default'] = dj_database_url.config()
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -127,9 +128,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_PATH = os.path.join(PROJECT_PATH,'static')
-
+STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (
-    STATIC_PATH,
+    os.path.join(BASE_DIR, 'static'),
 )
+
+#STATIC_PATH = os.path.join(PROJECT_PATH,'static')
+
+#STATICFILES_DIRS = (
+#    STATIC_PATH,
+#)
+
+SECURE_PROXY_SSL_HEADER = (‘HTTP_X_FORWARDED_PROTO’, ‘https’)
