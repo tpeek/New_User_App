@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-DATABASES['default'] = dj_databases_url.config()
+#DATABASES['default'] = dj_databases_url.config()
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
@@ -96,6 +96,16 @@ DATABASES['default'] = dj_databases_url.config()
 #        'NAME': DATABASE_PATH,
 #    }
 #}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': DATABASE_PATH,                      
+        'USER': 'db_user',
+        'PASSWORD': 'db_user_password',
+        'HOST': ''
+    }
+}
 
 
 # Internationalization
