@@ -108,7 +108,8 @@ DATABASES = {
 }
 import dj_database_url
 
-DATABASES['default'] = dj_database_url.config()
+#DATABASES['default'] = dj_database_url.config()
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:a@localhost:5432/postgres')}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
