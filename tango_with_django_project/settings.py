@@ -38,7 +38,7 @@ SECRET_KEY = '3(@wl!2nse&!=$gs01a%k!)5s)q9@=yql+aoal4%d@=*h&c3ui'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['floating-hamlet-8699.herokuapp.com']
 
 
 
@@ -103,7 +103,7 @@ DATABASES = {
         'NAME': 'postgres',                      
         'USER': 'postgres',
         'PASSWORD': 'a',
-        'HOST': 'postgres://hwnlxstrenbmvx:AwXIvjWziKYFY9ASIIL_6MRj6n@ec2-23-23-81-221.compute-1.amazonaws.com:5432/d1fvhapm9m163e',
+        'HOST': 'floating-hamlet-8699.herokuapp.com',
         #'PORT': '5432',
     }
 }
