@@ -128,15 +128,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'staticfiles'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
-#STATIC_PATH = os.path.join(PROJECT_PATH,'static')
-
+#STATIC_ROOT = 'staticfiles'
 #STATICFILES_DIRS = (
-#    STATIC_PATH,
+#    os.path.join(BASE_DIR, 'static'),
 #)
 
-SECURE_PROXY_SSL_HEADER = (‘HTTP_X_FORWARDED_PROTO’, ‘https’)
+STATIC_PATH = os.path.join(PROJECT_PATH,'static')
+
+STATICFILES_DIRS = (
+    STATIC_PATH,
+)
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
