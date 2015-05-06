@@ -37,7 +37,7 @@ SECRET_KEY = '3(@wl!2nse&!=$gs01a%k!)5s)q9@=yql+aoal4%d@=*h&c3ui'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['floating-hamlet-8699.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -128,15 +128,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = 'staticfiles'
-#STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, 'static'),
-#)
-
-STATIC_PATH = os.path.join(PROJECT_PATH,'static')
-
+STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (
-    STATIC_PATH,
+    os.path.join(BASE_DIR, 'static'),
 )
+
+#STATIC_PATH = os.path.join(PROJECT_PATH,'static')
+
+#STATICFILES_DIRS = (
+#    STATIC_PATH,
+#)
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
