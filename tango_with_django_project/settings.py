@@ -102,7 +102,7 @@ DATABASES = {
         'NAME': 'postgres',                      
         'USER': 'postgres',
         'PASSWORD': 'a',
-        'HOST': 'floating-hamlet-8699.herokuapp.com',
+        'HOST': '',
         #'PORT': '5432',
     }
 }
