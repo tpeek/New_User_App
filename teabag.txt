@@ -1,0 +1,4 @@
+=== floating-hamlet-8699 Config Vars
+DATABASE_URL:                postgres://hwnlxstrenbmvx:AwXIvjWziKYFY9ASIIL_6MRj6n@ec2-23-23-81-221.compute-1.amazonaws.com:5432/d1fvhapm9m163e
+HEROKU_POSTGRESQL_PINK_URL:  postgres://tmbwgakywfshlp:Qno8v9Fos1QeYhp7En7S2y3cfV@ec2-23-23-81-221.compute-1.amazonaws.com:5432/dco7ob0n4m0l3k
+HEROKU_POSTGRESQL_WHITE_URL: postgres://hwnlxstrenbmvx:AwXIvjWziKYFY9ASIIL_6MRj6n@ec2-23-23-81-221.compute-1.amazonaws.com:5432/d1fvhapm9m163e
