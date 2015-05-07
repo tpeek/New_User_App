@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 # Make a new user or edit an existing one.
 def register(request, username_url=None):
     context = RequestContext(request)
-
+    
     # Tells register.html if registration has succeeded or not.
     registered = False
 
@@ -175,7 +175,8 @@ def editUser(request, username_url):
             user = each_user
 
     context_dict = {'user': user, 'username_url': username_url}
-
+    print user.picture.url
+    print '@@@@@@@@@@@@@@@'
     # Go render the response and return it to the client.
     return render_to_response('rango/user.html', context_dict, context)
 
