@@ -24,8 +24,8 @@ LOGIN_URL = '/rango/login/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
 
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -88,28 +88,28 @@ WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 #DATABASES['default'] = dj_databases_url.config()
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#        'NAME': DATABASE_PATH,
-#    }
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': DATABASE_PATH,
+    }
+}
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         #'NAME': 'postgres',                      
         #'USER': 'postgres',
         #'PASSWORD': 'a',
         #'HOST': '',
         #'PORT': '5432',
-    }
-}
-import dj_database_url
+#    }
+#}
+#import dj_database_url
 
 #DATABASES['default'] = dj_database_url.config()
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:a@localhost:5432/postgres')}
+#DATABASES = {'default': dj_database_url.config(default='postgres://postgres:a@localhost:5432/postgres')}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -129,33 +129,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'staticfiles'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
-#STATIC_PATH = os.path.join(PROJECT_PATH,'static')
-
+#STATIC_ROOT = 'staticfiles'
 #STATICFILES_DIRS = (
-#    STATIC_PATH,
+#    os.path.join(BASE_DIR, 'static'),
 #)
 
+STATIC_PATH = os.path.join(PROJECT_PATH,'static')
 
-
-import os
-import psycopg2
-import urlparse
-
-urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(os.environ["DATABASE_URL"])
-
-conn = psycopg2.connect(
-    database=url.path[1:],
-    user=url.username,
-    password=url.password,
-    host=url.hostname,
-    port=url.port
+STATICFILES_DIRS = (
+    STATIC_PATH,
 )
 
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
